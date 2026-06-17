@@ -1,0 +1,503 @@
+/* ====================
+   Global Styles
+==================== */
+
+:root {
+
+    /* Primary light backgrounds */
+    --clr-primary-600: #DDCCB7;
+    /* Secondary background (header, cards, sections) */
+    --clr-primary-700: #EDE7DB;
+
+    /* Green accents */
+    --clr-accent: #6A6A53;
+    --clr-accent-600: #9B9879;
+
+    /* txt */
+    --clr-text-primary: #222222;
+
+    /* cta */
+    --clr-contrast-400: #4d342d;
+
+
+    --ff-primary: 'Poppins', sans-serif;
+
+    --fs-300: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
+    --fs-400: clamp(1.2rem, 1.0959rem + 0.5207vw, 1.4994rem);
+    --fs-500: clamp(1.44rem, 1.2457rem + 0.9717vw, 1.9988rem);
+    --fs-600: clamp(1.7281rem, 1.4025rem + 1.6283vw, 2.6644rem);
+    --fs-700: clamp(2.0738rem, 1.5596rem + 2.5707vw, 3.5519rem);
+    --fs-800: clamp(2.4881rem, 1.7066rem + 3.9076vw, 4.735rem);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: 200;
+    font-size: var(--fs-300);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--clr-primary-700);
+    color: var(--clr-text-primary);
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.secondary-bg {
+    background-color: var(--clr-primary-600);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.txt-link {
+    text-decoration: underline;
+}
+
+a.txt-link:hover {
+    color: #2C72F6;
+}
+
+
+/* ====================
+   Typography
+==================== */
+
+h1 {
+    margin-top: 2.5rem;
+    font-size: var(--fs-800);
+    font-weight: 500;
+}
+
+h2 {
+    font-size: var(--fs-600);
+    font-weight: 500;
+}
+
+h3 {
+    font-size: var(--fs-300);
+    font-weight: 400;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.section-title {
+    margin-bottom: 2.5rem;
+}
+
+.section-content {
+    text-align: center;
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ====================
+   Layout
+==================== */
+
+section {
+    padding: 4rem 0;
+}
+
+section.lowtop {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+section.lowbottom {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.container {
+    margin-inline: auto;
+    width: min(90%, 70.5rem);
+}
+
+
+.flip {
+    flex-direction: row-reverse;
+}
+
+.services-detail-info>div {
+    margin-bottom: 6em;
+    align-items: center;
+}
+
+.services-detail-info>div:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 50em) {
+
+    section {
+        padding: 7rem 0;
+    }
+
+    section.lowtop {
+        padding-top: 3rem;
+        padding-bottom: 7rem;
+    }
+
+    section.lowbottom {
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+    }
+
+    .split {
+        display: flex;
+    }
+
+    .split>*+* {
+        margin-left: 2em;
+    }
+
+    .split.flip>*+* {
+        margin-right: 2em;
+        margin-left: 0;
+    }
+
+    .split>* {
+        flex-basis: 100%;
+    }
+}
+
+
+/* ====================
+   img
+==================== */
+
+.image-container img {
+    border-radius: 15px;
+}
+
+/* ====================
+   Header
+==================== */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    color: var(--clr-primary-700);
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: var(--fs-400);
+    font-weight: 500;
+    margin: 0;
+}
+
+
+/* ====================
+   Navigation
+   ==================== */
+
+
+nav ul {
+    display: flex;
+    gap: 1.5em;
+    list-style: none;
+}
+
+nav a {
+    font-weight: 200;
+    transition: 200ms ease;
+}
+
+nav a:hover {
+    color: var(--clr-primary-600);
+}
+
+.sr-only {
+    display: none;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav a:after {
+    content: "";
+    position: absolute;
+    background-color: var(--clr-primary-700);
+    height: 3px;
+    width: 0%;
+    left: 50%;
+    bottom: -5px;
+    transition: 0.3s;
+    transform: translateX(-50%);
+    border-radius: 3px
+}
+
+nav a:hover::after,
+a.active::after {
+    width: 100%;
+}
+
+
+@media (max-width: 35em) {
+    .primary-navigation {
+        gap: 2em;
+        position: fixed;
+        inset: 0 0 0 30%;
+
+        padding: min(20vh, 10rem) 2em;
+        flex-direction: column;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+        background: var(--cle);
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+        z-index: 1000;
+    }
+
+    .mobile-nav-toggle {
+        position: absolute;
+        background: url(/images/burger-menu.svg);
+        background-repeat: repeat;
+        background-repeat: no-repeat;
+        width: 2rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 1.4rem;
+        right: 1.5rem;
+        z-index: 9999;
+        display: block;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background-image: url(/images/close-circle.svg);
+    }
+}
+
+
+/* ====================
+   Hero
+==================== */
+
+
+
+/* ============================
+   Hero carousel
+============================ */
+
+.carousel {
+    width: 100%;
+}
+
+/* Background slides */
+.slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* Active slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Dark overlay (optional but recommended for text readability) */
+.carousel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+/* Text content stays above everything */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    font-size: var(--fs-700);
+}
+
+/* ====================
+   Images
+==================== */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ====================
+   Buttons
+==================== */
+
+button,
+.btn {
+    padding: 0.6em 2em;
+    font-size: var(--fs-300);
+    font-weight: 300;
+    background: var(--clr-contrast-400);
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    transition: 300ms ease;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+button:hover,
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+
+/* ============================
+   Contact Page Styling
+============================ */
+
+.contact-form {
+    max-width: 600px;
+    margin: 3rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: var(--fs-300);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem 1rem;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-300);
+    font-weight: 200;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2C72F6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(44, 114, 246, 0.2);
+}
+
+.contact-form button.btn {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        width: 90%;
+    }
+}
+
+
+/* ============================
+   Animations 
+============================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+    display: inline-block;
+}
+
+.fade-in-up,
+.slide-in-left {
+    opacity: 0;
+
+}

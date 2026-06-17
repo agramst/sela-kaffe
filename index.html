@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hjem | Sela</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="/index.html">
+                    <p class="logo">Sela</p>
+                </a>
+
+                <div class="mobile-nav-toggle" id="mobile-nav-toggle" aria-controls="primary-navigation"
+                    aria-expanded="false" role="button">
+                    <span class="sr-only">Meny</span>
+                </div>
+
+                <nav>
+                    <ul id="primary-navigation" data-visible="false" class="primary-navigation nav-flex">
+                        <li><a href="/pages/meny.html">Meny</a></li>
+                        <li><a href="/pages/pakker.html">Pakker</a></li>
+                        <li><a href="/pages/kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+
+            <div class="carousel">
+
+                <!-- Background slides -->
+                <div class="slide active" style="background-image: url('images/car-1.jpg');"></div>
+                <div class="slide" style="background-image: url('images/car-2.jpg');"></div>
+                <div class="slide" style="background-image: url('images/car-3.jpg');"></div>
+
+                <!-- Foreground content -->
+                <div class="hero-content">
+                    <h1>Mobil kaffebar til <br> ditt arrangement</h1>
+                    <p>En mobil kaffebar som gjør det enkelt å tilby skikkelig god kaffe – hvor som helst.</p>
+                    <a href="#"><span class="btn">Book nå</span></a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about-overview">
+        <div class="container">
+
+            <div class="split">
+                <div>
+                    <h2 class="section-title">Om oss</h2>
+                    <div>
+
+                        <p>Vi driver en mobil kaffebar i Rogaland, og ønsker å skape gode kaffeopplevelser
+                            der folk samles. Vi leverer kvalitetskaffe, god service og fleksible løsninger som passer
+                            alt fra små private selskap til store arrangementer.</p>
+                    </div>
+                </div>
+
+                <div class="image-container">
+                    <img src="../images/jose-p-ortiz-Be6CbxPcQ6g-unsplash.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-overview" class="text-center secondary-bg">
+        <div class="container">
+            <h2 class="section-title">Kontakt oss</h2>
+            <p>Ønsker du å booke oss til ditt event? Ta gjerne kontakt, så tar vi en prat.</p>
+            <a href="/pages/kontakt.html" class="btn">Kontakt oss</a>
+        </div>
+    </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

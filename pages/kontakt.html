@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Sela</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="/index.html">
+                    <p class="logo">Sela</p>
+                </a>
+
+                <div class="mobile-nav-toggle" id="mobile-nav-toggle" aria-controls="primary-navigation"
+                    aria-expanded="false" role="button">
+                    <span class="sr-only">Menu</span>
+                </div>
+
+                <nav>
+                    <ul id="primary-navigation" data-visible="false" class="primary-navigation nav-flex">
+                        <li><a href="/pages/meny.html">Meny</a></li>
+                        <li><a href="/pages/pakker.html">Pakker</a></li>
+                        <li><a href="/pages/kontakt.html">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="contact" class="lowtop">
+            <div class="container">
+                <h1 class="section-title text-center fade-in-up">Kontakt oss</h1>
+                <p class="section-content text-center">
+                    Ønsker du å booke oss til ditt event? Ta gjerne kontakt, så tar vi en prat.</p>
+                </p>
+
+                <form action="#" method="post" class="contact-form">
+                    <div class="form-group">
+                        <label for="navn">Navn</label>
+                        <input type="text" id="navn" name="navn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="epost">E-post</label>
+                        <input type="email" id="epost" name="epost" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="melding">Melding</label>
+                        <textarea id="melding" name="melding" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>
