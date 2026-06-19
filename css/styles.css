@@ -140,19 +140,6 @@ section.lowbottom {
 }
 
 
-.flip {
-    flex-direction: row-reverse;
-}
-
-.services-detail-info>div {
-    margin-bottom: 6em;
-    align-items: center;
-}
-
-.services-detail-info>div:last-child {
-    margin-bottom: 0;
-}
-
 @media (min-width: 50em) {
 
     section {
@@ -169,31 +156,6 @@ section.lowbottom {
         padding-bottom: 3rem;
     }
 
-    .split {
-        display: flex;
-    }
-
-    .split>*+* {
-        margin-left: 2em;
-    }
-
-    .split.flip>*+* {
-        margin-right: 2em;
-        margin-left: 0;
-    }
-
-    .split>* {
-        flex-basis: 100%;
-    }
-}
-
-
-/* ====================
-   img
-==================== */
-
-.image-container img {
-    border-radius: 15px;
 }
 
 /* ====================
@@ -201,10 +163,7 @@ section.lowbottom {
 ==================== */
 
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000;
     color: var(--clr-primary-700);
 }
 
@@ -219,6 +178,7 @@ header {
     font-size: var(--fs-400);
     font-weight: 500;
     margin: 0;
+    color: var(--clr-text-primary);
 }
 
 
@@ -236,10 +196,11 @@ nav ul {
 nav a {
     font-weight: 200;
     transition: 200ms ease;
+    color: var(--clr-text-primary);
 }
 
 nav a:hover {
-    color: var(--clr-primary-600);
+    color: var(--clr-contrast-400);
 }
 
 .sr-only {
@@ -254,25 +215,6 @@ nav a:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-
-nav a:after {
-    content: "";
-    position: absolute;
-    background-color: var(--clr-primary-700);
-    height: 3px;
-    width: 0%;
-    left: 50%;
-    bottom: -5px;
-    transition: 0.3s;
-    transform: translateX(-50%);
-    border-radius: 3px
-}
-
-nav a:hover::after,
-a.active::after {
-    width: 100%;
 }
 
 
@@ -315,18 +257,15 @@ a.active::after {
 }
 
 
-/* ====================
-   Hero
-==================== */
-
-
-
 /* ============================
    Hero carousel
 ============================ */
 
 .carousel {
-    width: 100%;
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    overflow: hidden;
 }
 
 /* Background slides */
@@ -349,8 +288,11 @@ a.active::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
     z-index: 1;
+
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0) 100%);
 }
 
 /* Text content stays above everything */
@@ -358,8 +300,10 @@ a.active::after {
     position: relative;
     z-index: 2;
     color: white;
+    display: flex;
+    align-items: center;
+    height: 100%;
 
-    max-width: 600px;
 }
 
 .hero-content h1 {
@@ -367,6 +311,19 @@ a.active::after {
     margin-bottom: 2rem;
     line-height: 1.4;
     font-size: var(--fs-700);
+
+}
+
+.hero-content p {
+    max-width: 450px;
+}
+
+@media (max-width: 35em) {
+    .carousel::after {
+        background: linear-gradient(to right,
+                rgba(0, 0, 0, 0.7) 100%,
+                rgba(0, 0, 0, 0.7) 100%);
+    }
 }
 
 /* ====================
