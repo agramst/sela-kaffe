@@ -36,6 +36,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background: var(--clr-contrast-400);
+    color: #fff;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -48,7 +53,10 @@ body {
     overflow-x: hidden;
     background-color: var(--clr-primary-700);
     color: var(--clr-text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
+
 
 body,
 h1,
@@ -77,6 +85,12 @@ a.txt-link:hover {
     color: #2C72F6;
 }
 
+button,
+.btn {
+    border-radius: 10px;
+    letter-spacing: 0.02em;
+}
+
 
 /* ====================
    Typography
@@ -84,7 +98,7 @@ a.txt-link:hover {
 
 h1 {
     margin-top: 2.5rem;
-    font-size: var(--fs-800);
+    font-size: var(--fs-700);
     font-weight: 500;
 }
 
@@ -110,6 +124,7 @@ p {
     text-align: center;
     max-width: 60ch;
     margin-inline: auto;
+    line-height: 1.7;
 }
 
 .text-center {
@@ -121,7 +136,7 @@ p {
 ==================== */
 
 section {
-    padding: 4rem 0;
+    padding: 5rem 0;
 }
 
 section.lowtop {
@@ -139,11 +154,17 @@ section.lowbottom {
     width: min(90%, 70.5rem);
 }
 
+.split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
 
 @media (min-width: 50em) {
 
     section {
-        padding: 7rem 0;
+        padding: 8rem 0;
     }
 
     section.lowtop {
@@ -154,6 +175,10 @@ section.lowbottom {
     section.lowbottom {
         padding-top: 7rem;
         padding-bottom: 3rem;
+    }
+
+    .split {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -326,6 +351,8 @@ nav a:hover {
     }
 }
 
+
+
 /* ====================
    Images
 ==================== */
@@ -367,11 +394,11 @@ button:hover,
 ============================ */
 
 .contact-form {
-    max-width: 600px;
+    max-width: 650px;
     margin: 3rem auto 0;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.8rem;
 }
 
 .form-group {
@@ -380,37 +407,98 @@ button:hover,
 }
 
 .form-group label {
-    font-weight: 500;
+    font-weight: 400;
     font-size: var(--fs-300);
     margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1rem;
     font-family: var(--ff-primary);
     font-size: var(--fs-300);
-    font-weight: 200;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 300;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    transition: 250ms ease;
+    backdrop-filter: blur(6px);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #2C72F6;
+    border-color: var(--clr-contrast-400);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     outline: none;
-    box-shadow: 0 0 0 2px rgba(44, 114, 246, 0.2);
+    transform: translateY(-1px);
 }
 
 .contact-form button.btn {
     align-self: flex-start;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 480px) {
     .contact-form {
         width: 90%;
+    }
+}
+
+/* ============================
+   Menyside 
+============================ */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 400ms ease;
+}
+
+.menu-card h3 {
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.menu-card p {
+    padding: 0 1.2rem;
+    font-size: var(--fs-300);
+    opacity: 0.8;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.menu-card:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
 }
 

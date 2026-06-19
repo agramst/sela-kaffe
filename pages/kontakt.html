@@ -37,29 +37,46 @@
     <main>
         <section id="contact" class="lowtop">
             <div class="container">
-                <h1 class="section-title text-center fade-in-up">Kontakt oss</h1>
+
+                <h1 class="section-title text-center fade-in-up">
+                    La oss planlegge kaffeopplevelsen
+                </h1>
+
                 <p class="section-content text-center">
-                    Ønsker du å booke oss til ditt event? Ta gjerne kontakt, så tar vi en prat.</p>
+                    Fortell oss litt om arrangementet ditt – vi svarer raskt og setter sammen en løsning som passer både
+                    gjestene og anledningen.
                 </p>
 
+                <div class="section-content text-center" style="margin-bottom: 2rem;">
+                    <p>
+                        Vi svarer som regel innen 24 timer.
+                    </p>
+                </div>
+
                 <form action="#" method="post" class="contact-form">
+
                     <div class="form-group">
                         <label for="navn">Navn</label>
-                        <input type="text" id="navn" name="navn" required>
+                        <input type="text" id="navn" name="navn" placeholder="Ditt navn" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="epost">E-post</label>
-                        <input type="email" id="epost" name="epost" required>
+                        <label for="epost">E-postadresse</label>
+                        <input type="email" id="epost" name="epost" placeholder="din@epost.no" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="melding">Melding</label>
-                        <textarea id="melding" name="melding" rows="6" required></textarea>
+                        <label for="melding">Hva ønsker du hjelp med?</label>
+                        <textarea id="melding" name="melding" rows="6"
+                            placeholder="Fortell litt om arrangementet ditt..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn">Send</button>
+                    <button type="submit" class="btn">
+                        Send forespørsel
+                    </button>
+
                 </form>
+
             </div>
         </section>
     </main>
