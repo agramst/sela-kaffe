@@ -69,7 +69,7 @@ ul {
 }
 
 .secondary-bg {
-    background-color: var(--clr-primary-600);
+    background-color: var(--clr-accent-600);
 }
 
 a {
@@ -158,6 +158,7 @@ section.lowbottom {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
+    align-items: center;
 }
 
 
@@ -303,12 +304,10 @@ nav a:hover {
     transition: opacity 0.8s ease;
 }
 
-/* Active slide */
 .slide.active {
     opacity: 1;
 }
 
-/* Dark overlay (optional but recommended for text readability) */
 .carousel::after {
     content: "";
     position: absolute;
@@ -320,7 +319,6 @@ nav a:hover {
             rgba(0, 0, 0, 0) 100%);
 }
 
-/* Text content stays above everything */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -390,6 +388,15 @@ button:hover,
 
 
 /* ============================
+   Home Page Styling
+============================ */
+.about-overview .split {
+    justify-content: reverse;
+}
+
+
+
+/* ============================
    Contact Page Styling
 ============================ */
 
@@ -450,13 +457,6 @@ button:hover,
    Menyside 
 ============================ */
 
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem;
-    align-items: stretch;
-}
-
 .menu-card {
     background: rgba(255, 255, 255, 0.55);
     border-radius: 16px;
@@ -469,9 +469,11 @@ button:hover,
 }
 
 .menu-card img {
+    display: block;
     width: 100%;
-    height: 200px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
+    object-position: center;
     transition: transform 400ms ease;
 }
 
@@ -488,12 +490,32 @@ button:hover,
 }
 
 .menu-card:hover {
-    transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
 .menu-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .menu-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
