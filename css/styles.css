@@ -1,5 +1,6 @@
 /* ====================
-   Global Styles
+   Global Stylesssh -T git@github.com
+
 ==================== */
 
 :root {
@@ -521,6 +522,97 @@ button:hover,
 @media (max-width: 600px) {
     .menu-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ============================
+   Pakker Page Styling
+============================ */
+
+
+.packages-grid {
+    margin-top: 4rem;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.package-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.72);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.package-label {
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.2rem;
+    padding: 0.35rem 0.8rem;
+    background: rgba(106, 106, 83, 0.12);
+    color: var(--clr-accent);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.package-card h3 {
+    margin-bottom: 0.8rem;
+    font-size: var(--fs-400);
+    font-weight: 500;
+    color: var(--clr-contrast-400);
+}
+
+.package-description {
+    margin-bottom: 1.8rem;
+    max-width: 45ch;
+    opacity: 0.8;
+}
+
+.package-card ul {
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+    margin-top: auto;
+}
+
+.package-card li {
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.package-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--clr-accent);
+    font-weight: 500;
+}
+
+.package-card--premium {
+    background: var(--clr-primary-700);
+}
+
+.package-card--premium .package-label {
+    background: var(--clr-accent);
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .packages-grid {
+        margin-top: 3rem;
+    }
+
+    .package-card {
+        padding: 2rem 1.5rem;
     }
 }
 
