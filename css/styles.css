@@ -897,7 +897,6 @@ button:hover,
 
 
 .packages-grid {
-    margin-top: 4rem;
     gap: 2rem;
     align-items: stretch;
 }
@@ -973,9 +972,6 @@ button:hover,
 
 /* Mobile */
 @media (max-width: 600px) {
-    .packages-grid {
-        margin-top: 3rem;
-    }
 
     .package-card {
         padding: 2rem 1.5rem;
