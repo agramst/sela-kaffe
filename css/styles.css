@@ -290,7 +290,7 @@ nav a:hover {
 
 .carousel {
     position: relative;
-    height: 60vh;
+    height: 85vh;
     min-height: 400px;
     overflow: hidden;
 }
@@ -316,7 +316,7 @@ nav a:hover {
     z-index: 1;
 
     background: linear-gradient(to right,
-            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.6) 0%,
             rgba(0, 0, 0, 0) 100%);
 }
 
@@ -327,7 +327,6 @@ nav a:hover {
     display: flex;
     align-items: center;
     height: 100%;
-
 }
 
 .hero-content h1 {
@@ -362,6 +361,12 @@ img {
     height: auto;
 }
 
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
 /* ====================
    Buttons
 ==================== */
@@ -379,6 +384,10 @@ button,
     cursor: pointer;
     display: inline-block;
     margin-top: 1rem;
+}
+
+.hero-btn {
+    background: var(--clr-accent);
 }
 
 button:hover,
