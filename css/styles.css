@@ -294,16 +294,14 @@ nav a:hover {
 ============================ */
 
 .hero {
-    padding: 1rem;
     background: var(--clr-primary-700);
 }
 
 .carousel {
     position: relative;
-    height: calc(100vh - 2rem);
+    height: calc(80vh - 2rem);
     min-height: 600px;
     overflow: hidden;
-    border-radius: 20px;
     background: #222;
 }
 
