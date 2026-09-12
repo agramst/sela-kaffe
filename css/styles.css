@@ -359,7 +359,7 @@ nav a:hover {
 }
 
 .hero-card {
-    width: min(580px, 100%);
+    width: min(540px, 100%);
 
     padding: 2.5rem;
 
