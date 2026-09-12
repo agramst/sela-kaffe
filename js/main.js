@@ -2,6 +2,8 @@ function navLogic() {
     const primaryNav = document.querySelector('.primary-navigation');
     const navToggle = document.querySelector('.mobile-nav-toggle');
 
+    if (!primaryNav || !navToggle) return;
+
     navToggle.addEventListener("click", () => {
         const visibility = primaryNav.getAttribute("data-visible");
 
@@ -17,6 +19,9 @@ function navLogic() {
 
 function carouselLogic() {
     const slides = document.querySelectorAll(".slide");
+
+    // Don't run carousel logic on pages without slides
+    if (slides.length === 0) return;
 
     let current = 0;
 

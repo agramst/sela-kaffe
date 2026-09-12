@@ -58,21 +58,23 @@
                     </p>
                 </div>
 
-                <form action="#" method="post" class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+
+                    <input type="hidden" name="access_key" value="522434d1-e614-467f-b7b0-40f88c09d40f">
 
                     <div class="form-group">
                         <label for="navn">Navn</label>
-                        <input type="text" id="navn" name="navn" placeholder="Ditt navn" required>
+                        <input type="text" id="navn" name="name" placeholder="Ditt navn" required>
                     </div>
 
                     <div class="form-group">
                         <label for="epost">E-postadresse</label>
-                        <input type="email" id="epost" name="epost" placeholder="din@epost.no" required>
+                        <input type="email" id="epost" name="email" placeholder="din@epost.no" required>
                     </div>
 
                     <div class="form-group">
                         <label for="melding">Hva ønsker du hjelp med?</label>
-                        <textarea id="melding" name="melding" rows="6"
+                        <textarea id="melding" name="message" rows="6"
                             placeholder="Fortell litt om arrangementet ditt..." required></textarea>
                     </div>
 
@@ -81,7 +83,6 @@
                     </button>
 
                 </form>
-
             </div>
         </section>
     </main>
