@@ -501,7 +501,7 @@ button:hover,
 
 .footer h2 {
     margin-bottom: 1.5rem;
-    font-size: var(--fs-700);
+    font-size: var(--fs-600);
     line-height: 1.1;
     font-weight: 400;
 }
