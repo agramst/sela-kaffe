@@ -248,45 +248,197 @@ nav a:hover {
 }
 
 
-@media (max-width: 35em) {
-    .primary-navigation {
-        gap: 2em;
-        position: fixed;
-        inset: 0 0 0 30%;
+/* ============================
+   Mobile Navigation — Dark
+   ============================ */
 
-        padding: min(20vh, 10rem) 2em;
+@media (max-width: 35em) {
+
+    /* Page backdrop */
+    body:has(.primary-navigation[data-visible="true"])::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+
+    /* Mobile menu */
+    .primary-navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: min(82vw, 360px);
+
+        padding: 6rem 1.5rem 2rem;
+
+        display: flex;
         flex-direction: column;
+        gap: 0.25rem;
+
+        margin: 0;
+        list-style: none;
+
+        background: #171514;
+
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+        box-shadow: -16px 0 40px rgba(0, 0, 0, 0.35);
 
         transform: translateX(100%);
-        transition: transform 350ms ease-out;
-        background: var(--cle);
+        transition: transform 350ms ease;
+
+        z-index: 1000;
+        overflow-y: auto;
     }
 
+
+    /* Open state */
     .primary-navigation[data-visible="true"] {
-        transform: translateX(0%);
-        z-index: 1000;
+        transform: translateX(0);
     }
+
+
+    /* Navigation links */
+    .primary-navigation a {
+        display: flex;
+        align-items: center;
+
+        min-height: 54px;
+        padding: 0 1rem;
+
+        color: rgba(255, 255, 255, 0.85);
+
+        font-family: var(--ff-display);
+        font-size: 1.35rem;
+        font-weight: 400;
+
+        border-radius: 8px;
+
+        transition:
+            color 180ms ease,
+            background-color 180ms ease;
+    }
+
+
+    /* Hover / focus */
+    .primary-navigation a:hover,
+    .primary-navigation a:focus-visible {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.06);
+        outline: none;
+    }
+
+
+    /* Active/current link */
+    .primary-navigation a[aria-current="page"] {
+        color: var(--clr-primary-600);
+    }
+
+
+    /* ============================
+       Menu item animation
+       ============================ */
+
+    .primary-navigation[data-visible="true"] li {
+        animation: mobileMenuItem 350ms ease both;
+    }
+
+    .primary-navigation[data-visible="true"] li:nth-child(1) {
+        animation-delay: 50ms;
+    }
+
+    .primary-navigation[data-visible="true"] li:nth-child(2) {
+        animation-delay: 90ms;
+    }
+
+    .primary-navigation[data-visible="true"] li:nth-child(3) {
+        animation-delay: 130ms;
+    }
+
+    .primary-navigation[data-visible="true"] li:nth-child(4) {
+        animation-delay: 170ms;
+    }
+
+    .primary-navigation[data-visible="true"] li:nth-child(5) {
+        animation-delay: 210ms;
+    }
+
+
+    /* ============================
+       Menu toggle
+       ============================ */
 
     .mobile-nav-toggle {
         position: absolute;
-        background: url(/images/burger-menu.svg);
-        background-repeat: repeat;
-        background-repeat: no-repeat;
-        width: 2rem;
-        border: 0;
-        aspect-ratio: 1;
-        top: 1.4rem;
-        right: 1.5rem;
+        top: 1rem;
+        right: 1rem;
+
+        width: 35px;
+        height: 35px;
+
+        display: grid;
+        place-items: center;
+
+        padding: 0;
         z-index: 9999;
-        display: block;
+
+        cursor: pointer;
+
+        background-color: transparent;
+        background-image: url(/images/burger-menu.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        border: 0;
+
+        transition: transform 200ms ease;
     }
 
+
+    /* Close state */
     .mobile-nav-toggle[aria-expanded="true"] {
         background-image: url(/images/close-circle.svg);
+
+        transform: rotate(90deg);
+    }
+
+
+    /* ============================
+       Animations
+       ============================ */
+
+    @keyframes mobileMenuItem {
+        from {
+            opacity: 0;
+            transform: translateX(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 }
 
 
+/* ============================
+   Reduced Motion
+   ============================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .primary-navigation,
+    .primary-navigation li,
+    .mobile-nav-toggle {
+        animation: none;
+        transition: none;
+    }
+}
 
 
 /* ============================
