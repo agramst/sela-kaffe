@@ -390,7 +390,7 @@ nav a:hover {
         cursor: pointer;
 
         background-color: transparent;
-        background-image: url(/images/burger-menu.svg);
+        background-image: url(../images/burger-menu.svg);
         background-repeat: no-repeat;
         background-position: center;
 
@@ -402,7 +402,7 @@ nav a:hover {
 
     /* Close state */
     .mobile-nav-toggle[aria-expanded="true"] {
-        background-image: url(/images/close-circle.svg);
+        background-image: url(../images/close-circle.svg);
 
         transform: rotate(90deg);
     }
